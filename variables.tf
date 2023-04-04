@@ -3,6 +3,12 @@ variable "db_instance_id" {
   type        = string
 }
 
+variable "default_alert_period" {
+  description = "The instance ID of the RDS database instance that you want to monitor."
+  type        = string
+  default     = "60"
+}
+
 variable "burst_balance_threshold" {
   description = "The minimum percent of General Purpose SSD (gp2) burst-bucket I/O credits available."
   type        = number

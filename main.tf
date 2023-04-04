@@ -6,7 +6,7 @@ module "topic_label" {
   source  = "cloudposse/label/null"
   version = "0.25.0"
 
-  attributes = ["rds", "threshold", "alerts"]
+  attributes = ["rds", var.db_instance_id, "threshold", "alerts"]
 
   context = module.this.context
 }
@@ -20,7 +20,7 @@ module "subscription_label" {
   source  = "cloudposse/label/null"
   version = "0.25.0"
 
-  attributes = ["rds", "event", "sub"]
+  attributes = ["rds", var.db_instance_id, "event", "sub"]
 
   context = module.this.context
 }
